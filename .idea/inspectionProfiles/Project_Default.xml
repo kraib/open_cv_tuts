@@ -5,6 +5,7 @@
       <option name="ignoredIdentifiers">
         <list>
           <option value="contours.*" />
+          <option value="feature_macthing.*" />
         </list>
       </option>
     </inspection_tool>
