@@ -10,7 +10,7 @@ def order_points(pts):
 
     diff = np.diff(pts, axis=1)
     rect[1] = pts[np.argmin(diff)]
-    rect[2] = pts[np.argmax(diff)]
+    rect[3] = pts[np.argmax(diff)]
     return rect
 
 
