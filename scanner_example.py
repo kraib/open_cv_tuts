@@ -1,7 +1,6 @@
 import cv2
 import imutils
 from matplotlib import pyplot as plt
-
 from transform import four_point_transform
 
 image = cv2.imread("images/receipt-scanned.jpg")
@@ -24,8 +23,8 @@ for c in cnts:
         break
 
 warped = four_point_transform(image, screenCnt.reshape(4, 2))
+
 for point in screenCnt.reshape(4, 2):
-    print point
     cv2.circle(image,(point[0],point[1]), 5, (0,0,255), 4 )
 plt.subplot(121),plt.imshow(image),plt.title('Original')
 plt.xticks([]),plt.yticks([])
