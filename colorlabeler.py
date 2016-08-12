@@ -20,8 +20,8 @@ class ColorLabeler:
 
     def label(self, image, c):
 
-        mask = np.zeros(image.shape[:2], dtype="unit8")
-        cv2.drawContours(mask, c, -1, 255, -1)
+        mask = np.zeros(image.shape[:2], dtype="uint8")
+        cv2.drawContours(mask, [c], -1, 255, -1)
         mask = cv2.erode(mask, None, iterations=2)
         mean = cv2.mean(image, mask=mask)[:3]
 
