@@ -11,7 +11,7 @@ redperimage=[]
 greenperimage=[]
 
 for image in files:
-    img=plt.imread(os.path.join(image_dir.image))
+    img=plt.imread(os.path.join(image_dir,image))
     print img
     reds = img[:,:,0]
     print reds
