@@ -6,7 +6,7 @@ import sys
 
 folder="images/anchors/"
 
-query = cv2.imread(join(folder,"tatto_seed.jpg"),0)
+query = cv2.imread(join(folder,"tattoo_seed.jpg"),0)
 files=[]
 images=[]
 descriptors=[]
@@ -14,7 +14,7 @@ descriptors=[]
 for (dirpath,dirnames,filenames) in walk(folder):
     files.extend(filenames)
 for f in files:
-    if f.endswith("npy") and f != "tatoo_seed.npy":
+    if f.endswith("npy") and f != "tattoo_seed.npy":
         descriptors.append(f)
 print(descriptors)
 
@@ -22,7 +22,7 @@ sift = cv2.xfeatures2d.SIFT_create()
 query_kp,query_ds=sift.detectAndCompute(query,None)
 
 FLANN_INDEX_KDRESS=0
-index_params=dict(algorthim=FLANN_INDEX_KDRESS,tress=5)
+index_params=dict(algorithm=FLANN_INDEX_KDRESS,tress=5)
 search_params=dict(checks=50)
 flann=cv2.FlannBasedMatcher(index_params,search_params)
 
